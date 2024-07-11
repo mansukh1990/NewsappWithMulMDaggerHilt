@@ -88,7 +88,7 @@ class SearchActivity : AppCompatActivity() {
                 val end = changeDateFormat(it.second)
 
                 val map = mutableMapOf<String, String>()
-                map[Constant.API_KEY] = ""
+                map[Constant.API_KEY] = Constant.API_KEY
                 map[Constant.QUERY] = binding.searchTitle.text.toString()
                 map[Constant.START_DATE] = start
                 map[Constant.END_DATE] = end
