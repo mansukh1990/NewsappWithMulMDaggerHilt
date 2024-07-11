@@ -17,8 +17,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
 
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -34,6 +34,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+
     }
     dataBinding {
         enable = true
@@ -41,6 +42,15 @@ android {
 }
 
 dependencies {
+
+    implementation(project(":search:search_presentation"))
+    implementation(project(":news:news_presentation"))
+    implementation(project(":common:common_utils"))
+    implementation(project(":news:news_domain"))
+    implementation(project(":news:news_data"))
+
+    implementation(project(":search:search_data"))
+    implementation(project(":search:search_domain"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -62,4 +72,9 @@ dependencies {
     // For local unit tests
     testImplementation ("com.google.dagger:hilt-android-testing:2.51.1")
     kaptTest ("com.google.dagger:hilt-compiler:2.51.1")
+
+    implementation("androidx.room:room-runtime:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+
 }
